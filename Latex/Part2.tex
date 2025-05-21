@@ -1,0 +1,26 @@
+\section{Part 2}
+
+This second part of the problem aims to implement the pressure-velocity coupling and show how an arbitrary velocity field, after substracting the gradient of a certain type of field, can become a null-divergence one.
+
+\subsection{Algorithm}
+
+The implemented algorithm follows a simplified version of a predictor-corrector scheme. The objective is to begin with a velocity field containing artificial divergence and apply a correction using a scalar field (pseudo-pressure) whose gradient will subtract the divergence component from the velocity.
+
+\begin{enumerate}
+    \item Create coordinate positions, initialize null velocity field and introduce artificial divergence at a specific grid point by setting its horizontal and vertical velocities to non-zero values.
+    \item Compute the divergence of the predictor velocity field using a custom function.
+    \item Construct Laplacian matrix for pressure Poisson equation, solve a linear system for pseudo-pressure using the Laplacian equation and the divergence field in vector form.
+    \item Convert the pseudo-P vector back to 2D field format, then compute its gradients. Correct the velocity field using the calculated pseudo-P gradients. Then, compute the divergence of this new velocity field.
+    \item Compare maximum values of divergence before and after correction.
+    \item Plot the results.
+\end{enumerate}
+
+A relevant remark about this code are that the divergence and gradient are calculated in the physical domain excluding the halo, which is calculated after. Both divergence and gradient are calculated using finite difference approximation, forward difference in the case of the gradient and backward for the divergence, ensuring consistency with the staggered-grid scheme.
+
+\subsection{Validation strategy}
+
+SCZENSNY
+
+\subsection{Results}
+
+RESULTS AND FIGURES

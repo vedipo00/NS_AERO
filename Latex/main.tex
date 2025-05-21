@@ -2,12 +2,12 @@
 \usepackage[english]{babel}
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
-\usepackage{movie15}
 \selectlanguage{english}
 \NeedsTeXFormat{LaTeX2e}
 \renewcommand{\baselinestretch}{1.3}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
+\usepackage{csquotes}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -46,7 +46,7 @@
 
 %Capçalera_______________________
 \pagestyle{fancy}
-\fancyhead[L]{Navier-Stokes}
+\fancyhead[L]{Potential Aerodynamics}
 \fancyhead[R]{Aerodinàmica, Mecànica de Vol i Orbital
 %\includegraphics[scale=0.2]{imatges/upc.png}}
 }
@@ -92,18 +92,20 @@
 \input{0 Portada}
 
 % Índex___________________________
-    %\addtocontents{toc}{\hfill \textbf{Page} \par}
-    %\tableofcontents
-    %\newpage
+    \addtocontents{toc}{\hfill \textbf{Page} \par}
+    \tableofcontents
+    \newpage
     %\listoffigures
     %\newpage
     %\listoftables
     %\newpage
 %_________________________________
 \input{intro}
-\input{PartA}
-\input{PartB}
-\input{PartC}
+\newpage
+\input{Part1}
+\newpage
+\input{Part2}
+\newpage
 \input{Conclusions}
 
 \newpage
